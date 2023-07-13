@@ -1,17 +1,19 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { HousingLocationComponent } from '../housing-location/housing-location.component';
-import { Housinglocation } from '../housinglocation';
+import { HousingLocation } from '../housinglocation';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, HousingLocationComponent],
+  imports: [
+    CommonModule,
+    HousingLocationComponent
+  ],
   template: `
     <section>
       <form>
-        <input type="text" placeholder="Filter by city" />
+        <input type="text" placeholder="Filter by city">
         <button class="primary" type="button">Search</button>
       </form>
     </section>
@@ -25,7 +27,7 @@ import { Housinglocation } from '../housinglocation';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent {
-  housingLocationList: Housinglocation[] = [
+  housingLocationList: HousingLocation[] = [
     {
       id: 0,
       name: 'Acme Fresh Start Housing',
